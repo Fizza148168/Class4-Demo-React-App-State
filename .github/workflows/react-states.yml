@@ -25,4 +25,4 @@ jobs:
         run: npm install --g surge
         
       - name: Run surge
-        run: surge ./build bootcamp_react_fizzaClassThree.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./build bootcamp_react_fizzaClassFourTask.surge.sh --token ${{ secrets.SURGE_TOKEN }}
