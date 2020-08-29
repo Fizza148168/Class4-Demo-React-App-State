@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-
+import './Room.css'
 
 function Room()
 {
     let [isLit,setLit] = useState(true);
-    let [age, setAge] =useState(23);    
+    let [temp, setTemp] =useState(22);    
  /*   const State = useState(true);
     const isLit= State[0];
     const setLit= State[1];*/
@@ -19,12 +19,15 @@ function Room()
         setAge(++age);
         }
 */
-    return (<div>
-        This is room component Lit: {JSON.stringify(isLit)} <br/>
-        This room is : {JSON.stringify(isLit? "lit" : "dark")}<br/>
-        The Age here is : {age}<br/>
-        <button onClick={()=> setLit(!isLit)}> Toogle Light</button> 
-        <button onClick={()=> setAge(++age)}> Increase Age</button> 
+ //This is room component Lit: {JSON.stringify(isLit)} <br/>
+    return (
+   <div className={`room ${isLit? "lit" : "dark"}`}>
+        This room is : {JSON.stringify(isLit? "lit" : "dark")}
+        <button onClick={()=> setLit(true)}> Turn On Light</button> 
+        <button onClick={()=> setLit(false)}> Turn Off Light</button> <br/>
+        Temperature : {temp}<br/>
+        <button onClick={()=> setTemp(++temp)}> + </button> 
+        <button onClick={()=> setTemp(--temp)}> - </button> 
         </div>);
 }
 
